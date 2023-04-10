@@ -1,0 +1,59 @@
+//left motor
+int enLA = 13;
+int in1l = 12;
+int in2l = 11;
+int enLB = 10;
+int in3l = 9;
+int in4l = 8;
+//right motor
+int enRA = 7;
+int in1r = 6;
+int in2r = 5;
+int enRB = 4;
+int in3r = 3;
+int in4r = 2;
+
+void Goforward ()
+{
+  //left motor
+  digitalWrite(in1l, HIGH);
+  digitalWrite(in2l, LOW);
+  analogWrite(enLA, 200);
+  digitalWrite(in3l, LOW);
+  digitalWrite(in4l, HIGH);
+  analogWrite(enLB, 200);
+  //right motor
+  digitalWrite(in1r, HIGH);
+  digitalWrite(in2r, LOW);
+  analogWrite(enRA, 200);
+  digitalWrite(in3r, LOW);
+  digitalWrite(in4r, HIGH);
+  analogWrite(enRB, 200);
+}
+
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);  
+
+  //left motor
+  pinMode(enLA, OUTPUT);
+  pinMode(enLB, OUTPUT);
+  pinMode(in1l, OUTPUT);
+  pinMode(in2l, OUTPUT);
+  pinMode(in3l, OUTPUT);
+  pinMode(in4l, OUTPUT);
+  //right motor
+  pinMode(enRA, OUTPUT);
+  pinMode(enRB, OUTPUT);
+  pinMode(in1r, OUTPUT);
+  pinMode(in2r, OUTPUT);
+  pinMode(in3r, OUTPUT);
+  pinMode(in4r, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+Goforward();
+
+}
